@@ -1,0 +1,25 @@
+{
+  "name": "movo-frontend",
+  "version": "1.0.0",
+  "description": "Frontend repo for the Movo website",
+  "main": "main.js",
+  "repository": "https://github.com/jnafolayan/movo",
+  "author": "John Afolayan <jnafolayan@gmail.com>",
+  "license": "BSD-3-Clause",
+  "private": false,
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.1",
+    "html-webpack-plugin": "^3.2.0",
+    "rimraf": "^2.6.3",
+    "vue": "^2.6.10",
+    "vue-loader": "^15.7.0",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.3.1"
+  }
+}
