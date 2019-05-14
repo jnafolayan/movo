@@ -6,7 +6,9 @@
       </router-link>
       <div class="navbar__body">
         <div class="navbar__search">
-          <input id="navbarSearch" type="search" class="navbar__search-input" placeholder="Search our database" v-if="searchExpanded" />
+          <transition name="search-slide" v-if="searchExpanded">
+            <input id="navbarSearch" type="search" class="navbar__search-input" placeholder="Search our database" />
+          </transition>
           <label for="navbarSearch" class="navbar__search-label" @click="toggleSearch">
             <span class="lnr lnr-magnifier"></span>
           </label>

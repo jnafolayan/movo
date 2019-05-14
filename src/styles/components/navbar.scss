@@ -31,6 +31,23 @@
   color: $grey-darker;
 }
 
+.search-slide-enter,
+.search-slide-leave-to {
+  opacity: 0;
+  transform: rotate(100%);
+}
+
+.search-slide-enter-to,
+.search-slide-leave {
+  opacity: 1;
+  transform: rotate(0%);
+}
+
+.search-slide-enter-active,
+.search-slide-leave-active {
+  transition: opacity, transform 200ms ease-out;
+}
+
 .navbar__search .lnr {
   cursor: pointer;
 }
