@@ -1,0 +1,26 @@
+.navbar {
+  background: $white;
+  border-bottom: 1px solid #eee;
+
+  > .container {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.navbar__brand {
+  font-size: 24px;
+  font-family: $fs-title;
+  letter-spacing: -0.05rem;
+  color: $primary;
+}
+
+.navbar__body {
+  
+}
+
+.navbar__search input,
+.navbar__auth,
+.navbar__user {
+  display: none;
+}

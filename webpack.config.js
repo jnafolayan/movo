@@ -9,18 +9,25 @@ module.exports = {
       { test: /\.js$/, use: 'babel-loader' },
       { test: /\.vue$/, use: 'vue-loader' },
       { 
-        test: /\.css$/, 
+        test: /\.scss$/, 
         use: [
           'vue-style-loader', 
           'css-loader', 
           {
-            loader: 'sass-loader',
-            options: {
-              indentedSyntax: true
-            }
+            loader: 'sass-loader'
           }
         ]
       },
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'fonts/'
+          }
+        }]
+      }
     ]
   },
   devServer: {

@@ -3,7 +3,20 @@
   padding: 0;
 }
 
+body {
+  font-size: $fs-body;
+  font-family: $ff-body;
+}
+
 input {
   border: none;
   outline: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+a {
+  text-decoration: none;
 }

@@ -1,9 +1,31 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <main class="app-wrapper">
+      <navbar />
+      <router-view></router-view>
+    </main>
   </div>
 </template>
 
+<script>
+import Navbar from './components/Navbar.vue';
+
+export default {
+  name: 'app',
+  components: { Navbar }
+}
+</script>
+
 <style lang="scss">
-@import './styles/global.scss';
+#app {
+  background-color: #bbb;
+}
+
+.app-wrapper {
+  width: 100vw;
+  min-height: 100vh;
+  max-width: 1240px;
+  margin: 0 auto;
+  background: #fff;
+}
 </style>
