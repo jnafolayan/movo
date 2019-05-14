@@ -24,7 +24,7 @@ export default {
 .app-wrapper {
   width: 100vw;
   min-height: 100vh;
-  max-width: 1240px;
+  // max-width: 1240px;
   margin: 0 auto;
   background: #fff;
 }
