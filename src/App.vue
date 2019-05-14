@@ -18,7 +18,7 @@ export default {
 
 <style lang="scss">
 #app {
-  background-color: #bbb;
+  background-color: #dddddd;
 }
 
 .app-wrapper {

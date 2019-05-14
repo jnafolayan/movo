@@ -1,0 +1,33 @@
+.movie-carousel__items {
+  display: flex;
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.movie-carousel__item {
+  text-decoration: none;
+  color: #fff;
+  flex-basis: 200px;
+  min-width: 200px;
+  background-color: hsl(210, 94%, 70%);
+}
+
+.movie-carousel__item-desc {
+  background-color: hsla(200, 5%, 10%, 0.6);
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  padding: $spacing-4 $spacing-2;
+  justify-content: flex-end;
+
+  h4 {
+    color: $grey-lighter;
+  }
+
+  small {
+    color: $grey-light;
+  }
+}

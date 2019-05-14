@@ -6,8 +6,10 @@
       </router-link>
       <div class="navbar__body">
         <div class="navbar__search">
-          <input id="navbarSearch" type="search" class="navbar__search-input" placeholder="Search our database" />
-          <label for="navbarSearch"><span class="lnr lnr-search"></span></label>
+          <input id="navbarSearch" type="search" class="navbar__search-input" placeholder="Search our database" v-if="searchExpanded" />
+          <label for="navbarSearch" class="navbar__search-label" @click="toggleSearch">
+            <span class="lnr lnr-magnifier"></span>
+          </label>
         </div>
         <ul class="navbar__auth">
           <li class="navbar__auth-item">
@@ -19,10 +21,38 @@
         </div>
       </div>
     </div>
+
+    <div class="fixed-search" v-if="fixedSearchExpanded">
+      <input id="fixedSearch" type="search" class="fixed-search__input" placeholder="" />
+    </div>
   </nav>
 </template>
+
+<script>
+export default {
+  name: 'navbar',
+  data() {
+    return {
+      searchExpanded: false,
+      fixedSearchExpanded: false
+    };
+  },
+  methods: {
+    toggleSearch() {
+      const width = window.innerWidth;
+
+      if (width < 468)
+        this.fixedSearchExpanded = !this.fixedSearchExpanded;
+      else
+        this.searchExpanded = !this.searchExpanded;
+    }
+  }
+}
+</script>
+
 
 <style lang="scss">
 @import '../styles/global.scss';
 @import '../styles/components/navbar.scss';
 </style>
+ 
