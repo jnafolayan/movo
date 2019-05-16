@@ -2,6 +2,10 @@
   display: flex;
   overflow-x: auto;
 
+  &.movie-carousel__items--spaced > .movie-carousel__item {
+    margin: 0 10px;
+  }
+
   &::-webkit-scrollbar {
     display: none;
   }
@@ -13,6 +17,15 @@
   flex-basis: 250px;
   min-width: 250px;
   background-color: hsl(210, 94%, 70%);
+
+  @media (min-width: 768px) {
+    &:hover {
+      .movie-carousel__item-desc {
+        transform: translateY(0%);
+        opacity: 1;
+      }
+    }
+  }
 }
 
 .movie-carousel__item-desc {
@@ -29,5 +42,11 @@
 
   small {
     color: $grey-light;
+  }
+
+  @media (min-width: 768px) {
+    transform: translateY(100%);
+    opacity: 0;
+    transition: all 0.2s;
   }
 }

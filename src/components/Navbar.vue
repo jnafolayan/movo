@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar">
-    <div class="container-fluid">
+    <div class="container">
       <router-link class="navbar__header" to="/">
         <h4 class="navbar__brand">movo</h4>
       </router-link>

@@ -1,13 +1,13 @@
 <template>
   <div class="movie-carousel">
-    <div class="movie-carousel__items">
+    <div 
+      :class="{ 'movie-carousel__items': true, 'movie-carousel__items--spaced': spaced }">
       <router-link
         class="movie-carousel__item"
         to="{ name: 'movie', params: { slug: movie.slug } }"
         v-for="movie in movies"
         :key="movie.slug"
-        :style="{ 'background-image': 'url('+ movie.coverArt + ')' }"
-      >
+        :style="{ 'background-image': 'url('+ movie.coverArt + ')' }">
         <div class="movie-carousel__item-desc">
           <h4 class="movie-carousel__item-name">{{ movie.title }}</h4>
           <p><small>{{ movie.genre }}</small></p>
@@ -18,15 +18,9 @@
 </template>
 
 <script>
-import movies from '../seeds/movies';
-
 export default {
   name: 'movie-carousel',
-  data() {
-    return {
-      movies
-    }
-  }
+  props: ['movies', 'spaced']
 }
 </script>
 
