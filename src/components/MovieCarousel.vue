@@ -18,26 +18,13 @@
 </template>
 
 <script>
+import movies from '../seeds/movies';
+
 export default {
   name: 'movie-carousel',
   data() {
     return {
-      movies: []
-    };
-  },
-  created() {
-    const movie = {
-      slug: 'hello-word-f83fj',
-      title: 'Hello World',
-      genre: 'Comedy, Drama'
-    };
-    for (let i = 0; i < 10; i++)
-      this.movies.push(create());
-
-    function create() {
-      let m = Object.create(movie);
-      m.slug = Math.random().toString(32).substring(2);
-      return m;
+      movies
     }
   }
 }
