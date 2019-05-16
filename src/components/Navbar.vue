@@ -69,7 +69,7 @@ export default {
     toggleSearch() {
       const width = window.innerWidth;
 
-      if (width < 496)
+      if (width < 768)
         this.fixedSearchExpanded = !this.fixedSearchExpanded;
       else
         this.searchExpanded = !this.searchExpanded;
