@@ -34,18 +34,18 @@
 .search-slide-enter,
 .search-slide-leave-to {
   opacity: 0;
-  transform: rotate(100%);
+  transform: translateX(100%);
 }
 
 .search-slide-enter-to,
 .search-slide-leave {
   opacity: 1;
-  transform: rotate(0%);
+  transform: translateX(0%);
 }
 
 .search-slide-enter-active,
 .search-slide-leave-active {
-  transition: opacity, transform 200ms ease-out;
+  transition: all 0.2s ease-out;
 }
 
 .navbar__search .lnr {
