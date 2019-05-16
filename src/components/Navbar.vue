@@ -21,11 +21,28 @@
         <div class="navbar__user">
           <p>Hi <span class="navbar__user-name">johndoe</span></p>
         </div>
+        <div class="navbar__trigger">
+          <span class="lnr lnr-menu" @click="toggleNavbar"></span>
+        </div>
       </div>
     </div>
 
-    <div class="fixed-search" v-if="fixedSearchExpanded">
-      <input id="fixedSearch" type="search" class="fixed-search__input" placeholder="" />
+    <transition name="navbar-collapse" v-if="navbarExpanded">
+      <ul class="navbar__collapse container">
+        <li>
+          <router-link to="/login" class="navbar__collapse-link">Sign In</router-link>
+        </li>
+      </ul>
+    </transition>
+
+    <div class="fixed-search" v-if="fixedSearchExpanded" @click="closeFixedSearch($event)">
+      <input 
+        id="fixedSearch" 
+        type="search" 
+        class="fixed-search__input" 
+        placeholder="Search for a movie" 
+        autofocus="true"
+        @keydown.esc="closeFixedSearch($event, true)" />
     </div>
   </nav>
 </template>
@@ -35,18 +52,43 @@ export default {
   name: 'navbar',
   data() {
     return {
+      navbarExpanded: false,
       searchExpanded: false,
       fixedSearchExpanded: false
     };
   },
+  
+  created() {
+    this.$router.beforeEach((to, from, next) => {
+      this.reset();
+      next();
+    });
+  },
+
   methods: {
     toggleSearch() {
       const width = window.innerWidth;
 
-      if (width < 468)
+      if (width < 768)
         this.fixedSearchExpanded = !this.fixedSearchExpanded;
       else
         this.searchExpanded = !this.searchExpanded;
+    },
+
+    toggleNavbar() {
+      this.navbarExpanded = !this.navbarExpanded;
+    },
+
+    closeFixedSearch({ target }, dontCheckIfSearch) {
+      if (dontCheckIfSearch || target.id != 'fixedSearch') {
+        this.fixedSearchExpanded = false;
+      }
+    },
+
+    reset() {
+      this.fixedSearchExpanded = false;
+      this.navbarExpanded = false;
+      this.searchExpanded = false;
     }
   }
 }
