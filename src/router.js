@@ -12,6 +12,11 @@ const router = new VueRouter({
       name: 'home',
       path: '/',
       component: Home
+    },
+    {
+      name: 'login',
+      path: '/login',
+      component: () => import(/* webpackChunkName: login */ './views/Login.vue')
     }
   ]
 });

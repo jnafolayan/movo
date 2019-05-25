@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar">
     <div class="container">
-      <router-link class="navbar__header" to="/">
+      <router-link class="navbar__header" to="home">
         <h4 class="navbar__brand">movo</h4>
       </router-link>
       <div class="navbar__body">
@@ -15,7 +15,7 @@
         </div>
         <ul class="navbar__auth">
           <li class="navbar__auth-item">
-            <router-link to="/login" class="navbar__auth-link">Sign In</router-link>
+            <router-link to="login" class="navbar__auth-link">Sign In</router-link>
           </li>
         </ul>
         <div class="navbar__user">
@@ -30,7 +30,7 @@
     <transition name="navbar-collapse" v-if="navbarExpanded">
       <ul class="navbar__collapse container">
         <li>
-          <router-link to="/login" class="navbar__collapse-link">Sign In</router-link>
+          <router-link to="login" class="navbar__collapse-link">Sign In</router-link>
         </li>
       </ul>
     </transition>
