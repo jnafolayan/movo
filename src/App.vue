@@ -22,7 +22,7 @@ export default {
 }
 
 .app-wrapper {
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   // max-width: 1240px;
   margin: 0 auto;

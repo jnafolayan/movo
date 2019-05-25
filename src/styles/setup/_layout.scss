@@ -5,8 +5,6 @@
 .container {
   @extend .container-fluid;
 
-  width: 100%;
-
   @media (min-width: 768px) {
     max-width: 1024px;
     margin: 0 auto;
@@ -20,8 +18,18 @@
 .section__heading {
   font-size: $fs-heading;
   font-family: $ff-heading;
+  font-weight: lighter;
   color: $grey-darker;
-  padding-bottom: $spacing-3;
-  margin-bottom: $spacing-3;
-  border-bottom: 4px solid rgba($grey-light, 0.5);
+  text-align: center;
+
+  &:after {
+    content: "";
+    display: block;
+    margin: $spacing-2 auto;
+    margin-bottom: $spacing-4;
+    width: 100%;
+    max-width: 200px;
+    height: 4px;
+    background-color: rgba($secondary, 0.7);
+  }
 }

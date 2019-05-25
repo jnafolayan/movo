@@ -1,6 +1,7 @@
 .movie-carousel__items {
   display: flex;
   overflow-x: auto;
+  overflow-y: hidden;
 
   &.movie-carousel__items--spaced > .movie-carousel__item {
     margin: 0 10px;
@@ -16,7 +17,9 @@
   color: #fff;
   flex-basis: 250px;
   min-width: 250px;
-  background-color: hsl(210, 94%, 70%);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 
   @media (min-width: 768px) {
     &:hover {
@@ -30,7 +33,7 @@
 
 .movie-carousel__item-desc {
   background-color: hsla(200, 5%, 10%, 0.6);
-  height: 200px;
+  height: 280px;
   display: flex;
   flex-direction: column;
   padding: $spacing-4 $spacing-2;

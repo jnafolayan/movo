@@ -65,6 +65,10 @@
 
 .navbar__search .lnr {
   cursor: pointer;
+
+  &:hover {
+    color: $secondary;
+  }
 }
 
 .fixed-search {
@@ -81,7 +85,7 @@
     width: 100%;
     height: 70px;
     padding: $spacing-2 $spacing-3;
-    font-size: $fs-heading;
+    font-size: $fs-title;
     font-family: $ff-body;
     background: $white;
     bottom: 0;
@@ -100,7 +104,7 @@
   color: $grey;
 
   &:hover {
-    color: $primary;
+    color: $secondary;
   }
 }
 
@@ -142,7 +146,7 @@
     color: $grey;
 
     &:hover {
-      color: $primary;
+      color: $secondary;
     }
   }
 
