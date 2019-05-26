@@ -125,9 +125,12 @@
   transition: all 0.1s;
 }
 
-.navbar__auth,
-.navbar__user {
+.navbar__auth {
   display: none;
+}
+
+.navbar__user {
+  color: $secondary;
 }
 
 .navbar__trigger {
