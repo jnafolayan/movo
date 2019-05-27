@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar">
     <div class="container">
-      <router-link class="navbar__header" to="/">
+      <router-link class="navbar__header" :to="{ name: 'home' }">
         <h4 class="navbar__brand">movo</h4>
       </router-link>
       <div class="navbar__body">
@@ -14,13 +14,16 @@
           </label>
         </div>
         <ul class="navbar__auth">
-          <li class="navbar__auth-item">
-            <router-link to="/login" class="navbar__auth-link">Sign In</router-link>
+          <li class="navbar__auth-item" v-if="!$store.getters.token">
+            <router-link :to="{ name: 'login' }" class="navbar__auth-link">Sign In</router-link>
+          </li>
+          <li class="navbar__auth-item" v-else>
+            Hi, <span class="navbar__username">{{ $store.getters.username }}</span>
+          </li>
+          <li class="navbar__auth-item" v-if="$store.getters.token">
+            <router-link :to="{ name: 'logout' }" class="navbar__auth-link">Sign Out</router-link>
           </li>
         </ul>
-        <div class="navbar__user">
-          <p>Hi <span class="navbar__user-name">johndoe</span></p>
-        </div>
         <div class="navbar__trigger">
           <span class="lnr lnr-menu" @click="toggleNavbar"></span>
         </div>
@@ -29,8 +32,14 @@
 
     <transition name="navbar-collapse" v-if="navbarExpanded">
       <ul class="navbar__collapse container">
-        <li>
-          <router-link to="/login" class="navbar__collapse-link">Sign In</router-link>
+        <li v-if="!$store.getters.token">
+          <router-link :to="{ name: 'login' }" class="navbar__collapse-link">Sign In</router-link>
+        </li>
+        <li v-else>
+          Hi, <span class="navbar__username">{{ $store.getters.username }}</span>
+        </li>
+        <li v-if="$store.getters.token">
+          <router-link :to="{ name: 'logout' }" class="navbar__collapse-link">Sign Out</router-link>
         </li>
       </ul>
     </transition>

@@ -33,7 +33,7 @@
   overflow: none;
 
   @media (min-width: 768px) {
-    width: 85%;
+    width: 75%;
   }
 }
 
@@ -125,9 +125,12 @@
   transition: all 0.1s;
 }
 
-.navbar__auth,
-.navbar__user {
+.navbar__auth {
   display: none;
+}
+
+.navbar__username {
+  color: $secondary;
 }
 
 .navbar__trigger {
@@ -139,7 +142,9 @@
 
 @media (min-width: 768px) {
   .navbar__auth {
-    display: block;
+    display: flex;
+    width: 20%;
+    justify-content: space-between;
   }
 
   .navbar__auth-link {

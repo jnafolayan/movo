@@ -1,7 +1,8 @@
 $spacing-1: 8px;
 $spacing-2: 12px;
 $spacing-3: 18px;
-$spacing-4: 28px;
+$spacing-4: 34px;
+$spacing-5: 48px;
 
 $white: #fff;
 $grey-lighter: hsl(210, 5%, 96%);
@@ -13,9 +14,15 @@ $grey-darker: hsl(210, 5%, 12%);
 $primary: hsl(205, 98%, 45%);
 $secondary: hsl(5, 100%, 60%);
 
+$bg-error: hsla(3, 98%, 75%, 0.8);
+$text-error: hsl(3, 98%, 30%);
+
+$fs-small: 14px;
 $fs-body: 16px;
+$fs-medium: 18px;
 $fs-title: 24px;
 $fs-heading: 32px;
+$fs-big: 42px;
 
 $ff-body: 'Open Sans', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', 
   Helvetica, Tahoma, Arial, sans-serif;
