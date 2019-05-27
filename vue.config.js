@@ -1,3 +1,4 @@
 module.exports = {
-  publicPath: '<movo>'
-}
+  baseUrl: process.env.NODE_ENV == 'development' ? '/' : '/dist/',
+  outputDir: 'dist/'
+};
