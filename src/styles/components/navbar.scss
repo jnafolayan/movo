@@ -33,7 +33,7 @@
   overflow: none;
 
   @media (min-width: 768px) {
-    width: 85%;
+    width: 75%;
   }
 }
 
@@ -129,7 +129,7 @@
   display: none;
 }
 
-.navbar__user {
+.navbar__username {
   color: $secondary;
 }
 
@@ -142,7 +142,9 @@
 
 @media (min-width: 768px) {
   .navbar__auth {
-    display: block;
+    display: flex;
+    width: 20%;
+    justify-content: space-between;
   }
 
   .navbar__auth-link {

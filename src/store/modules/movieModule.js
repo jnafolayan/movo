@@ -22,7 +22,7 @@ const actions = {
 };
 
 const getters = {
-  movies: state => state.movies;
+  movies: state => state.movies
 };
 
 const movieModule = {

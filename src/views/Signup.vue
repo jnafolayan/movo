@@ -56,7 +56,12 @@ export default {
         .then(redirect)
         .catch(handleSignupError);
 
-      function redirect(response) {
+      function redirect({ data: e }) {
+        const payload = {
+          username,
+          token: e.data.token
+        };
+        _this.$store.dispatch('saveUser', payload);
         _this.$router.push({ name: 'login' });
       }
 

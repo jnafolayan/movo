@@ -46,6 +46,10 @@ export default {
     }
   },
 
+  created() {
+    this.username = this.$store.getters.username;
+  },
+
   methods: {
     togglePassVisibility() {
       const $el = this.$refs.password;
@@ -68,7 +72,12 @@ export default {
         .then(redirect)
         .catch(handleLoginError);
 
-      function redirect(response) {
+      function redirect({ data: e }) {
+        const payload = {
+          username,
+          token: e.data.token
+        };
+        _this.$store.dispatch('saveUser', payload);
         _this.$router.push({ name: 'home' });
       }
 
